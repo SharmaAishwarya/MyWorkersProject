@@ -10,24 +10,34 @@ link:"https://www.amazon.com/"},
  * Class to transform html
  */
 class LinksTransformer {
-  constructor(link) {
-    this.link = link
-    console.log(link, 'inside constructor', this.link)
+  constructor(attributeName) {
+    this.attributeName = attributeName
+    console.log(attributeName, 'inside constructor', this.attributeName)
   }
   
   async element(element) {
-    console.log('inside element', element.tagName)
+    console.log('inside element', element.tagName == 'div')
+
     if(element.getAttribute('id') == 'links'){
       console.log(element.getAttribute('id'))
-      element.prepend("<a></a>", {html:true})
-      element.prepend("<a></a>", {html:true})
-      element.prepend("<a></a>", {html:true})
+      for(var index = 0 ; index < links.length; index++){
+        element.prepend("<a id="+links[index].name+" href="+links[index].link+">"+links[index].name+"</a>", {html:true})
+      }
+    }if(element.getAttribute('id') == 'avatar'){
+      element.setAttribute('src' , 'https://di-uploads-pod15.dealerinspire.com/orangecoastchryslerjeepdodgeram/uploads/2019/12/2020-Dodge-Challenger-Costa-Mesa-CA-grey-Left.jpg')
+    }if(element.getAttribute('id') == 'profile'){
+      element.removeAttribute('style')
+    }if(element.getAttribute('id') == 'name'){
+      element.prepend("Aishwarya Sharma", {html:false})
     }
-
+    
   }
 }
 const rewriter = new HTMLRewriter()
   .on("div#links", new LinksTransformer('id'))
+  .on("div#profile", new LinksTransformer('style'))
+  .on("img#avatar", new LinksTransformer('src'))
+  .on("h1#name", new LinksTransformer('id'))
   
 
 
