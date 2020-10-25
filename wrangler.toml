@@ -1,6 +1,7 @@
 name = "json-api"
 type = "javascript"
-account_id = ""
+account_id = "5c80b2bbe4ac76e01612b0cf1d511f0a"
 workers_dev = true
 route = ""
 zone_id = ""
+ 
