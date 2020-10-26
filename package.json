@@ -5,12 +5,25 @@
   "description": "A template for kick starting a Cloudflare Workers project",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-harness": "webpack --config webpack.mocha.config.js -p --progress --colors",
+    "test": "mocha",
     "format": "prettier --write '**/*.{js,css,json,md}'"
   },
   "author": "Aishwarya Sharma <aishwarya-sharma@uiowa.edu>",
   "license": "MIT",
   "devDependencies": {
-    "prettier": "^1.18.2"
+    "chai": "^4.2.0",
+    "exports-loader": "^1.1.1",
+    "form-data": "^3.0.0",
+    "mocha": "^8.2.0",
+    "mocha-loader": "git+https://github.com/obezuk/mocha-loader.git",
+    "prettier": "^1.18.2",
+    "we": "^1.5.10",
+    "webpack": "^5.2.0",
+    "webpack-cli": "^4.1.0"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "request": "^2.88.2"
   }
 }
