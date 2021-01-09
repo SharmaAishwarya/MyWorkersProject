@@ -1,10 +1,13 @@
 const someHost = "https://static-links-page.signalnerve.workers.dev"
-const links =[{name: "amazon" ,
-link:"https://www.amazon.com/"},
-{name: "google" ,
-            link:"https://www.google.com/"},
-{name: "cloudflare" ,
-            link:"https://developers.cloudflare.com/workers/learning/getting-started#4b-routing-and-filtering-requests"}
+const links =[
+  {name: "Linked-in" ,
+link:"https://www.linkedin.com/in/aishwarya-sharma-70564bb4/"},
+{name: "Rent-it-mate" ,
+            link:"https://rent-it-mate.herokuapp.com/"},
+{name: "Github" ,
+            link:"https://github.com/SharmaAishwarya"},
+{name: "Card-Game" ,
+            link:"https://fall2020-team01-sprint3.herokuapp.com/"}
 ]
 /**
  * Class to transform html
@@ -24,7 +27,7 @@ class LinksTransformer {
         element.prepend("<a id="+links[index].name+" href="+links[index].link+">"+links[index].name+"</a>", {html:true})
       }
     }if(element.getAttribute('id') == 'avatar'){
-      element.setAttribute('src' , 'https://di-uploads-pod15.dealerinspire.com/orangecoastchryslerjeepdodgeram/uploads/2019/12/2020-Dodge-Challenger-Costa-Mesa-CA-grey-Left.jpg')
+      element.setAttribute('src' , './asset/IMG_6633.jpg')
     }if(element.getAttribute('id') == 'profile'){
       element.removeAttribute('style')
     }if(element.getAttribute('id') == 'name'){
