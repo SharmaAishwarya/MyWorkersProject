@@ -27,7 +27,7 @@ class LinksTransformer {
         element.prepend("<a id="+links[index].name+" href="+links[index].link+">"+links[index].name+"</a>", {html:true})
       }
     }if(element.getAttribute('id') == 'avatar'){
-      element.setAttribute('src' , './asset/IMG_6633.jpg')
+      element.setAttribute('src' , 'https://www.thegazette.com/storyimage/GA/20190221/ARTICLE/190229930/AR/0/AR-190229930.jpg&MaxH=500&MaxW=900')
     }if(element.getAttribute('id') == 'profile'){
       element.removeAttribute('style')
     }if(element.getAttribute('id') == 'name'){
