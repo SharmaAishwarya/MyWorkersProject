@@ -27,7 +27,7 @@ class LinksTransformer {
         element.prepend("<a id="+links[index].name+" href="+links[index].link+">"+links[index].name+"</a>", {html:true})
       }
     }if(element.getAttribute('id') == 'avatar'){
-      element.setAttribute('src' , './asset/IMG_6633.jpg')
+      element.setAttribute('src' , 'https://github.com/SharmaAishwarya/MyWorkersProject/blob/master/asset/IMG_6633.JPG')
     }if(element.getAttribute('id') == 'profile'){
       element.removeAttribute('style')
     }if(element.getAttribute('id') == 'name'){
